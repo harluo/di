@@ -1,0 +1,8 @@
+package di
+
+import (
+	"github.com/heluon/di/internal/core"
+)
+
+// Get 向容器注入依赖
+type Get = core.Get
