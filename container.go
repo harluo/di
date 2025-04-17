@@ -1,8 +1,8 @@
 package di
 
 import (
-	"github.com/heluon/di/internal/builder"
-	"github.com/heluon/di/internal/core"
+	"github.com/harluo/di/internal/builder"
+	"github.com/harluo/di/internal/core"
 )
 
 // Container 依赖管理容器

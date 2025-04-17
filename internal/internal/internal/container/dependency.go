@@ -6,9 +6,9 @@ import (
 
 	"github.com/goexl/exception"
 	"github.com/goexl/gox/field"
-	"github.com/heluon/di/internal/internal/constant"
-	"github.com/heluon/di/internal/internal/internal/message"
-	"github.com/heluon/di/internal/internal/internal/param"
+	"github.com/harluo/di/internal/internal/constant"
+	"github.com/harluo/di/internal/internal/internal/message"
+	"github.com/harluo/di/internal/internal/internal/param"
 	"go.uber.org/dig"
 )
 

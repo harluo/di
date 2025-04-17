@@ -1,8 +1,8 @@
 package builder
 
 import (
-	"github.com/heluon/di/internal/internal/builder/internal"
-	"github.com/heluon/di/internal/internal/param"
+	"github.com/harluo/di/internal/internal/builder/internal"
+	"github.com/harluo/di/internal/internal/param"
 )
 
 type Container[F any] struct {

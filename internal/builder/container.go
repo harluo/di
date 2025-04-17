@@ -1,9 +1,9 @@
 package builder
 
 import (
-	"github.com/heluon/di/internal/core"
-	"github.com/heluon/di/internal/internal/builder"
-	"github.com/heluon/di/internal/internal/param"
+	"github.com/harluo/di/internal/core"
+	"github.com/harluo/di/internal/internal/builder"
+	"github.com/harluo/di/internal/internal/param"
 )
 
 type Container struct {

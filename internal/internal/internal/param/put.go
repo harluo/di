@@ -1,8 +1,8 @@
 package param
 
 import (
-	"github.com/heluon/di/internal/internal/constant"
-	"github.com/heluon/di/internal/internal/runtime"
+	"github.com/harluo/di/internal/internal/constant"
+	"github.com/harluo/di/internal/internal/runtime"
 )
 
 type Put struct {

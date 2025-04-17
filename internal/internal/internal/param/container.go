@@ -1,7 +1,7 @@
 package param
 
 import (
-	"github.com/heluon/di/internal/internal/param"
+	"github.com/harluo/di/internal/internal/param"
 )
 
 type Container = param.Container

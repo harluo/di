@@ -3,7 +3,7 @@ package di_test
 import (
 	"testing"
 
-	"github.com/heluon/di"
+	"github.com/harluo/di"
 	"github.com/stretchr/testify/assert"
 )
 

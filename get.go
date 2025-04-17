@@ -1,7 +1,7 @@
 package di
 
 import (
-	"github.com/heluon/di/internal/core"
+	"github.com/harluo/di/internal/core"
 )
 
 // Get 向容器注入依赖
