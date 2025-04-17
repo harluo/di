@@ -1,4 +1,4 @@
-module github.com/heluon/di
+module github.com/harluo/di
 
 go 1.24
 
