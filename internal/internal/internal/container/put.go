@@ -6,7 +6,6 @@ import (
 
 	"github.com/goexl/exception"
 	"github.com/goexl/gox/field"
-	"github.com/harluo/di/internal/internal/constant"
 	"github.com/harluo/di/internal/internal/internal/message"
 	"github.com/harluo/di/internal/internal/internal/param"
 	"go.uber.org/dig"
@@ -31,34 +30,27 @@ func (p *Put) Apply() {
 }
 
 func (p *Put) Inject() (err error) {
-	for _, name := range p.params.Names {
-		for _, group := range p.params.Groups {
-			for _, constructor := range p.params.Constructors {
-				if ve := p.validate(constructor); nil != ve {
-					err = ve
-				} else if pe := p.provide(constructor, name, group); nil != pe {
-					err = pe
-				}
+	for _, constructor := range p.params.Constructors {
+		if 0 != len(p.params.Names) {
+			for _, name := range p.params.Names {
+				err = p.container.Provide(constructor, dig.Name(name))
 				if nil != err {
-					break
+					return
+				}
+			}
+		}
+
+		if 0 != len(p.params.Groups) {
+			for _, group := range p.params.Groups {
+				err = p.container.Provide(constructor, dig.Group(group))
+				if nil != err {
+					return
 				}
 			}
 		}
 	}
 
 	return
-}
-
-func (p *Put) provide(constructor any, name string, group string) error {
-	options := make([]dig.ProvideOption, 0)
-	if constant.DependencyNone != name {
-		options = append(options, dig.Name(name))
-	}
-	if constant.DependencyNone != group {
-		options = append(options, dig.Group(group))
-	}
-
-	return p.container.Provide(constructor, options...)
 }
 
 func (p *Put) validate(constructor any) (err error) {

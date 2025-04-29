@@ -1,7 +1,6 @@
 package param
 
 import (
-	"github.com/harluo/di/internal/internal/constant"
 	"github.com/harluo/di/internal/internal/runtime"
 )
 
@@ -18,11 +17,7 @@ func NewPut(container *Container, constructors []runtime.Constructor) *Put {
 		Container: container,
 
 		Constructors: constructors,
-		Names: []string{
-			constant.DependencyNone,
-		},
-		Groups: []string{
-			constant.DependencyNone,
-		},
+		Names:        make([]string, 0),
+		Groups:       make([]string, 0),
 	}
 }
