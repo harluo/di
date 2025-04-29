@@ -1,6 +1,7 @@
 package param
 
 import (
+	"github.com/goexl/gox"
 	"github.com/harluo/di/internal/internal/runtime"
 )
 
@@ -8,8 +9,8 @@ type Put struct {
 	*Container
 
 	Constructors []runtime.Constructor
-	Names        []string
-	Groups       []string
+	Names        map[string]*gox.Empty
+	Groups       map[string]*gox.Empty
 }
 
 func NewPut(container *Container, constructors []runtime.Constructor) *Put {
@@ -17,7 +18,7 @@ func NewPut(container *Container, constructors []runtime.Constructor) *Put {
 		Container: container,
 
 		Constructors: constructors,
-		Names:        make([]string, 0),
-		Groups:       make([]string, 0),
+		Names:        make(map[string]*gox.Empty),
+		Groups:       make(map[string]*gox.Empty),
 	}
 }

@@ -31,22 +31,26 @@ func (p *Put) Apply() {
 
 func (p *Put) Inject() (err error) {
 	for _, constructor := range p.params.Constructors {
-		if 0 != len(p.params.Names) {
-			for _, name := range p.params.Names {
-				err = p.container.Provide(constructor, dig.Name(name))
-				if nil != err {
-					return
-				}
+		for name := range p.params.Names {
+			err = p.container.Provide(constructor, dig.Name(name))
+			if nil != err {
+				break
 			}
 		}
 
-		if 0 != len(p.params.Groups) {
-			for _, group := range p.params.Groups {
-				err = p.container.Provide(constructor, dig.Group(group))
-				if nil != err {
-					return
-				}
+		for group := range p.params.Groups {
+			err = p.container.Provide(constructor, dig.Group(group))
+			if nil != err {
+				break
 			}
+		}
+
+		if 0 == len(p.params.Names) && 0 == len(p.params.Groups) {
+			err = p.container.Provide(constructor)
+		}
+
+		if nil != err {
+			break
 		}
 	}
 
