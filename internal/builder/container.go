@@ -22,6 +22,6 @@ func NewContainer() (container *Container) {
 	return
 }
 
-func (c *Container) Get() *core.Container {
+func (c *Container) Instance() *core.Container {
 	return core.NewContainer(c.params)
 }

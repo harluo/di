@@ -6,15 +6,23 @@ import (
 )
 
 type Put struct {
-	Constructor runtime.Constructor
-	Names       []string
-	Groups      []string
+	*Container
+
+	Constructors []runtime.Constructor
+	Names        []string
+	Groups       []string
 }
 
-func NewPut(constructor runtime.Constructor) *Put {
+func NewPut(container *Container, constructors []runtime.Constructor) *Put {
 	return &Put{
-		Constructor: constructor,
-		Names:       []string{constant.DependencyNone},
-		Groups:      []string{constant.DependencyNone},
+		Container: container,
+
+		Constructors: constructors,
+		Names: []string{
+			constant.DependencyNone,
+		},
+		Groups: []string{
+			constant.DependencyNone,
+		},
 	}
 }

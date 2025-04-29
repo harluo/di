@@ -1,8 +1,8 @@
 package di
 
 import (
-	"github.com/harluo/di/internal/core"
+	"github.com/harluo/di/internal/kernel"
 )
 
 // Get 向容器注入依赖
-type Get = core.Get
+type Get = kernel.Get

@@ -5,11 +5,15 @@ import (
 )
 
 type Get struct {
-	Getter runtime.Getter
+	*Container
+
+	Getters []runtime.Getter
 }
 
-func NewGet(getter runtime.Getter) *Get {
+func NewGet(container *Container, getters []runtime.Getter) *Get {
 	return &Get{
-		Getter: getter,
+		Container: container,
+
+		Getters: getters,
 	}
 }

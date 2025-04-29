@@ -8,6 +8,6 @@ import (
 )
 
 func TestNew(t *testing.T) {
-	container := di.New().Get()
+	container := di.New().Instance()
 	assert.NotNil(t, container)
 }
