@@ -4,7 +4,7 @@ go 1.24
 
 require (
 	github.com/goexl/gox v1.9.2
-	go.uber.org/dig v1.18.1
+	go.uber.org/dig v1.18.2
 )
 
 require (
