@@ -8,7 +8,7 @@ require (
 )
 
 require (
-	github.com/goexl/exception v0.0.3
+	github.com/goexl/exception v0.0.4
 	github.com/stretchr/testify v1.10.0
 )
 
