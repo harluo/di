@@ -1,15 +1,12 @@
 module github.com/harluo/di
 
-go 1.24
-
-require (
-	github.com/goexl/gox v1.9.2
-	go.uber.org/dig v1.19.0
-)
+go 1.27
 
 require (
 	github.com/goexl/exception v0.0.4
+	github.com/goexl/gox v1.9.3
 	github.com/stretchr/testify v1.11.1
+	go.uber.org/dig v1.19.0
 )
 
 require (
